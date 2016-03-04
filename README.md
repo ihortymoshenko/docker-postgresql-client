@@ -24,7 +24,7 @@ Start container specifying the executable script for cron:
 
     docker run -d \
     -v `<script-dir>`/script.sh:/root/script.sh \
-    --volumes-from=mysql \
+    --volumes-from=postgresql \
     -e CRON_JOB='* * * * * ~/script.sh >> /var/log/script.log 2>&1' \
     -e HOST="postgresql" \
     -e PORT="5432" \
